@@ -7,10 +7,9 @@ import styles from './EventList.module.scss';
 import EventCard from 'components/common/EventCard/EventCard';
 
 const EventList = (props) => {
-  console.log(props);
   return (
     <div className={styles.events}>
-      {props.events ? (
+      {props.events.length ? (
         props.events.map((item) => (
           <EventCard
             key={item._id}
@@ -21,7 +20,7 @@ const EventList = (props) => {
           />
         ))
       ) : (
-        <div>You do not have subscribed events now!</div>
+        <div style={{ marginLeft: '12px' }}>You do not have subscribed events now!</div>
       )}
     </div>
   );
